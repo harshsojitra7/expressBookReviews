@@ -1,0 +1,9 @@
+curl http://localhost:5000/title/The%20Odyssey
+
+{
+  "9780140449136": {
+    "author": "Homer",
+    "title": "The Odyssey",
+    "reviews": {}
+  }
+}
