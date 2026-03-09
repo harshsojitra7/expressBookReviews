@@ -1,0 +1,8 @@
+curl -X PUT http://localhost:5000/customer/auth/review/9780140449136 -H "Content-Type: application/json" -d "{\"review\":\"Great book\"}"
+
+{
+  "message": "Review added successfully",
+  "reviews": {
+    "harsh": "Great book"
+  }
+}
