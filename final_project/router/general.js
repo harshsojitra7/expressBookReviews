@@ -44,33 +44,22 @@ module.exports.general = public_users;
 
 const axios = require('axios');
 
-// Get all books using async/await
-public_users.get('/async/books', async function (req, res) {
-    try {
-        const response = await axios.get('http://localhost:5000/');
-        res.send(response.data);
-    } catch (error) {
-        res.status(500).send(error);
-    }
+public_users.get('/async/books', async function(req,res){
+ const response = await axios.get('http://localhost:5000/');
+ return res.status(200).json(response.data);
 });
 
-// Get book by ISBN using Promise
-public_users.get('/async/isbn/:isbn', function (req, res) {
-    axios.get('http://localhost:5000/isbn/' + req.params.isbn)
-        .then(response => res.send(response.data))
-        .catch(error => res.status(500).send(error));
+public_users.get('/async/isbn/:isbn', function(req,res){
+ axios.get('http://localhost:5000/isbn/'+req.params.isbn)
+ .then(response=>res.send(response.data));
 });
 
-// Get books by author
-public_users.get('/async/author/:author', function (req, res) {
-    axios.get('http://localhost:5000/author/' + req.params.author)
-        .then(response => res.send(response.data))
-        .catch(error => res.status(500).send(error));
+public_users.get('/async/author/:author', function(req,res){
+ axios.get('http://localhost:5000/author/'+req.params.author)
+ .then(response=>res.send(response.data));
 });
 
-// Get books by title
-public_users.get('/async/title/:title', function (req, res) {
-    axios.get('http://localhost:5000/title/' + req.params.title)
-        .then(response => res.send(response.data))
-        .catch(error => res.status(500).send(error));
+public_users.get('/async/title/:title', function(req,res){
+ axios.get('http://localhost:5000/title/'+req.params.title)
+ .then(response=>res.send(response.data));
 });
