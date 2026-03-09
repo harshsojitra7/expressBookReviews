@@ -1,0 +1,9 @@
+curl https://api.github.com/repos/harshsojitra7/expressBookReviews
+
+{
+  "full_name": "harshsojitra7/expressBookReviews",
+  "fork": true,
+  "parent": {
+    "full_name": "ibm-developer-skills-network/expressBookReviews"
+  }
+}
